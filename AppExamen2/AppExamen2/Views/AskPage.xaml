@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppExamen2.Views.AskPage">
+    <ContentPage.Content>
+
+        <StackLayout Padding="10">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <DatePicker x:Name="DpckDate" />
+                <Editor x:Name="EdtAsk" HeightRequest="150" Placeholder="Create your question"/>
+                <Picker x:Name="PckStatus" Title="Select status" ItemDisplayBinding="{Binding AskStatus1}"/>
+                <Entry x:Name="TxtDetail" Placeholder="Detail"/>
+                <Entry x:Name="TxtImagUrl" Placeholder="URL image"/>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="5">
+                    <Switch x:Name="SwIsStrike" IsToggled="False" Toggled="SwIsStrike_Toggled" OnColor="Red" ThumbColor="#06BAF7" />
+                    <Label Text="Violates the policies" FontSize="Body" FontAttributes="Bold"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand" Padding="0,10">
+                <Button x:Name="BtnAdd" Text="Add" TextColor="Black" CornerRadius="20" BackgroundColor="Green" Clicked="BtnAdd_Clicked"/>
+                <Button x:Name="BtnCancel" Text="Cancel" TextColor="Black" CornerRadius="20" BackgroundColor="DarkRed" Clicked="BtnCancel_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

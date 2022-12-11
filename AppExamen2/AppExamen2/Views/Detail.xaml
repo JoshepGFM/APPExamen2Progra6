@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppExamen2.Views.Detail">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#F08A8A">
+                <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">
+                    <Label Text="View all questions"/>
+                    <Switch x:Name="SwVeiwAll" IsToggled="False" Toggled="SwVeiwAll_Toggled" OnColor="Red" ThumbColor="#06BAF7" />
+                </StackLayout>
+                <ListView x:Name="LvSAK" HasUnevenRows="True"
+                      ItemSelected="LvSAK_ItemSelected" BackgroundColor="White">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Padding="15">
+
+                                        <Label Text="Question:" FontAttributes="Bold"  TextColor="Black"/>
+                                        <Label Text="{Binding AskDescription}"/>
+                                        <Label Text="Detail:" FontAttributes="Bold" TextColor="Black"/>
+                                        <Label Text="{Binding AskDetail}"/>
+                                        <StackLayout >
+                                            <Label Text="{Binding User}"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout HorizontalOptions="StartAndExpand" Grid.ColumnSpan="1">
+                                                <Label Text="Status:" FontAttributes="Bold"  TextColor="Black"/>
+                                                <Label Text="{Binding Status}" HorizontalOptions="Start"/>
+                                            </StackLayout>
+                                            <StackLayout HorizontalOptions="End" Orientation="Horizontal" Grid.RowSpan="2">
+                                                <Label Text="Data:" FontSize="Body"/>
+                                                <Label Text="{Binding Date}" FontAttributes="Bold" TextColor="Black"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Padding="80,0">
+                                            <Image Source="{Binding ImageUrl}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

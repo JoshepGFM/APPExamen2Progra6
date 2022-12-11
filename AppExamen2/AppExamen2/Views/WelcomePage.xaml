@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppExamen2.Views.WelcomePage"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#F26B6B" Offset="0.02"/>
+                    <GradientStop Color="#367D63" Offset="2.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="10">
+                <StackLayout Padding="10,50">
+                <Picker x:Name="PckUsers" Title="User name" ItemDisplayBinding="{Binding UserName}" BackgroundColor="White"/>
+            </StackLayout>
+                <Button x:Name="BtnWelcome" 
+                        Text="start"
+                        FontSize="20" 
+                        FontAttributes="Bold" 
+                        BackgroundColor="Green" 
+                        BorderColor="Black" 
+                        BorderWidth="2"
+                        CornerRadius="15"
+                        HeightRequest="50"
+                        Clicked="BtnWelcome_Clicked"
+                        />
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
